@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhadira perdoname</title>
+    <style>
+        .imagen{
+            border-radius: 50%;
+            padding: 2%;
+        }
+
+        .titulo{
+            font-size: xx-large;
+            padding: 2%;
+        }
+    </style>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="body">
+    <div class="contenedor">
+        <h1 class="titulo">Perdoname porfavor</h1>
+    <img src="file:///C:/Users/eric/Pictures/gato.PNG" alt="foto" class="imagen">
+        <p>Jhadira me perdonas? 😿</p>
+        <button id="yesBtn">Si</button>
+        <button id="noBtn">No</button>
+    </div>
+    <script src="index.js"></script>
+
+</body>
+</html>
+
+*{
+    margin: 0;
+}
+
+.contenedor{
+    background-color: pink;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+
+p{
+    font-size: xx-large;
+    padding: 1%;
+}
+
+button{
+    font-size: xx-large;
+    padding: 0.75em;
+}
+
+#yesBtn{
+    transform: translate(-100%,0);
+}
+
+#noBtn{
+    position: absolute;
+}
+
+
+const yesBtn = document.querySelector('#yesBtn');
+
+yesBtn.addEventListener('click',function () {
+    alert('gracias por perdonarme jjjj')
+});
+
+const noBtn = document.querySelector('#noBtn');
+
+noBtn.addEventListener('mouseover', function () {
+    const randomX = parseInt(Math.random()*100);
+    const randomY = parseInt(Math.random()*100);
+    noBtn.style.setProperty('top',randomY+'%');
+    noBtn.style.setProperty('left',randomX+'%');
+    noBtn.style.setProperty('transform',`translate(-${randomX}%,-${randomY}%)`);
+})
